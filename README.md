@@ -36,8 +36,8 @@ end
 transformations.transform(
   id: '1',
   name: 'Product',
-  price: 1.0,
-  is_available: true,
+  price: '1.0',
+  is_available: 'true',
   available: { from: '2014-01-01', until: '2015-01-01' }
 )
 ```
