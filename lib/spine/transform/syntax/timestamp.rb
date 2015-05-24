@@ -6,8 +6,7 @@ module Spine
           register(
             key,
             intercept(key, options) { |value|
-              return value if value.is_a?(DateTime)
-              DateTime.iso8601(value.to_s)
+              value.is_a?(DateTime) ? value : DateTime.iso8601(value.to_s)
             }
           )
         end

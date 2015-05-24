@@ -6,8 +6,7 @@ module Spine
           register(
             key,
             intercept(key, options) { |value|
-              return value if value.is_a?(Float)
-              Float(value.to_s)
+              value.is_a?(Float) ? value : Float(value.to_s)
             }
           )
         end

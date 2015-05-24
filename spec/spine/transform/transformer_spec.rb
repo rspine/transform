@@ -106,12 +106,30 @@ module Spine
           expect(result[:identity]).to eql(1)
         end
 
+        it 'transforms value to integer without conversion' do
+          subject = Transformer.define do
+            integer :identity
+          end
+
+          result = subject.transform(identity: 1)
+          expect(result[:identity]).to eql(1)
+        end
+
         it 'transforms value to decimal' do
           subject = Transformer.define do
             decimal :price
           end
 
           result = subject.transform(price: '1.25')
+          expect(result[:price]).to eql(1.25)
+        end
+
+        it 'transforms value to decimal without conversion' do
+          subject = Transformer.define do
+            decimal :price
+          end
+
+          result = subject.transform(price: 1.25)
           expect(result[:price]).to eql(1.25)
         end
 
@@ -158,6 +176,16 @@ module Spine
           expect(result[:starts_at]).to eql(date)
         end
 
+        it 'transforms value to date without conversion' do
+          subject = Transformer.define do
+            date :starts_at
+          end
+
+          date = Date.new(2014, 1, 1)
+          result = subject.transform(starts_at: date)
+          expect(result[:starts_at]).to eql(date)
+        end
+
         it 'transforms value to timestamp' do
           subject = Transformer.define do
             timestamp :starts_at
@@ -165,6 +193,16 @@ module Spine
 
           date = DateTime.new(2014, 1, 1, 12, 0, 0)
           result = subject.transform(starts_at: date.iso8601)
+          expect(result[:starts_at]).to eql(date)
+        end
+
+        it 'transforms value to timestamp without conversion' do
+          subject = Transformer.define do
+            timestamp :starts_at
+          end
+
+          date = DateTime.new(2014, 1, 1, 12, 0, 0)
+          result = subject.transform(starts_at: date)
           expect(result[:starts_at]).to eql(date)
         end
       end
