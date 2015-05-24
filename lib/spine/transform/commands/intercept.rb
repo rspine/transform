@@ -9,8 +9,6 @@ module Spine
 
         def execute(destination, value)
           destination[@key] = @action.call(value)
-        #rescue
-        #  raise 'Uhuu'
         end
       end
     end
