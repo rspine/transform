@@ -4,6 +4,8 @@
 [![Dependency Status](https://gemnasium.com/rspine/transform.svg)](https://gemnasium.com/rspine/transform)
 [![Test Coverage](https://codeclimate.com/github/rspine/transform/badges/coverage.svg)](https://codeclimate.com/github/rspine/transform/coverage)
 [![Code Climate](https://codeclimate.com/github/rspine/transform/badges/gpa.svg)](https://codeclimate.com/github/rspine/transform)
+[![security](https://hakiri.io/github/rspine/transform/master.svg)](https://hakiri.io/github/rspine/transform/master)
+[![Inline docs](http://inch-ci.org/github/rspine/transform.svg?branch=master)](http://inch-ci.org/github/rspine/transform)
 [![Codeship Status for rspine/transform](https://codeship.com/projects/3bca5340-e429-0132-2690-16773c71d38d/status?branch=master)](https://codeship.com/projects/81799)
 
 Transforms hash by defined commands. Here we focus on how to transform given
